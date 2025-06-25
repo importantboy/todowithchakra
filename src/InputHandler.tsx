@@ -32,7 +32,7 @@ const InputHandler = ({ exportList }) => {
       createdAt: new Date().toLocaleTimeString(),
     };
     setTodoList([...todoList, todo]);
-    setInputValue('')
+    setInputValue("");
   };
 
   return (
@@ -42,7 +42,6 @@ const InputHandler = ({ exportList }) => {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
-      minW={"md"}
     >
       <Heading
         as={"h2"}
@@ -54,7 +53,12 @@ const InputHandler = ({ exportList }) => {
         todo list
       </Heading>
 
-      <Box as={"div"} px={{ base: "1rem", md: "0rem" }}>
+      <Box
+        as={"div"}
+        px={{ base: "2rem", md: "0rem" }}
+        className="input-rahul"
+        minW={{ base: "sm", sm: "sm", md: "md", lg: "md" }}
+      >
         <Field.Root display={"flex"} flexDir={"row"}>
           <InputGroup startElement={<MdOutlineEditNote />}>
             <Input
@@ -68,7 +72,7 @@ const InputHandler = ({ exportList }) => {
         </Field.Root>
 
         {/* // here the todo list item will come  */}
-        <Box as={"div"} display={"flex"} flexDir={"column"} minW={{sm : 'sm' , md : 'md' , lg : 'md'}}>
+        <Box as={"div"} display={"flex"} flexDir={"column"}>
           {/* all todo list item will go here  */}
           {
             <For each={todoList}>

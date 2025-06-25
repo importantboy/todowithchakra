@@ -33,20 +33,21 @@ function Todoitem({ item, list, setlist }) {
   const [collapse, setcollapse] = useState(false);
 
   return (
-    <Box minW={"sm"}>
+    <Box >
       <Dialogbox
         isOpen={open}
         setopen={setopen}
         list={list}
         setlist={setlist}
         id={item.id}
-         
+      
       />
       <Collapsible.Root
         unmountOnExit 
         bg={"whiteAlpha.100"}
         px={"4"}
         my={2}
+        //  maxW={'md'}
         rounded={"md"}
         fontSize={"1rem"}
          open={collapse}
@@ -54,17 +55,17 @@ function Todoitem({ item, list, setlist }) {
         lazyMount={true}
          
       >
-        <Collapsible.Trigger paddingY="3" w={"full"} >
+        <Collapsible.Trigger paddingY="3" minW={{base : 'sm' , sm : 'sm' , md : 'md' , lg : 'md'}}>
           <HStack
             justifyContent={"space-between"}
             display={"flex"}
             textAlign={"left"}
+            className="rahulisgreat"
           >
             <Box
               as={"div"}
               display={"flex"}
               flexDirection={"column"}
-              w="full"
               justifyContent={"space-between"}
               gap={"1.2rem"}
             >
@@ -72,6 +73,7 @@ function Todoitem({ item, list, setlist }) {
                 {item.title &&
                   item.title.trim().split(" ").slice(0, 8).join(" ") + "..."}
               </Text>
+
               <Box
                 as={"div"}
                 display={"flex"}
@@ -138,7 +140,6 @@ function Todoitem({ item, list, setlist }) {
           <Box padding="4" my={"5"} borderWidth="1px">
             {/* text inside the box will go inside it    */}
             <Editable.Root
-              maxW={"md"}
               defaultValue={item.title}
               onValueChange={(val) => {
                 const updatedlist = list.map((user) => {

@@ -9,7 +9,7 @@ function Dialogbox({ isOpen, setopen, list, setlist, id }) {
     const remove = list.filter((user) => user.id !== id);
     setlist([...remove]);
     setopen(!isOpen);
-  };
+  };  
   return (
     <Dialog.Root
       unmountOnExit={true}

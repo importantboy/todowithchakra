@@ -18,7 +18,6 @@ function App() {
     <Box
       as="div"
       display={"flow-root"}
-      w={'screen'}
       fontSize={{ base: "sm", md: "lg", lg: "xl" }}
     >
       <Navbar />
