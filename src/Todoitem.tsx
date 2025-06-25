@@ -13,13 +13,13 @@ import { MdDelete } from "react-icons/md";
 import { RiEditFill } from "react-icons/ri";
 import { handleCheckboxClick } from "./Todofunction";
 import Dialogbox from "./Dialogbox";
-import React, { useState } from "react";
+import { useState } from "react";
 // import { useState } from "react";
 
 function Todoitem({ item, list, setlist }) {
   const [open, setopen] = useState(false);
 
-  const handleSetCheck = (e, id) => {
+  const handleSetCheck = (id) => {
     const updatedList = list.map((user) =>
       user.id === id ? { ...user, isCompleted: !item.isCompleted } : user
     );
@@ -40,6 +40,7 @@ function Todoitem({ item, list, setlist }) {
         list={list}
         setlist={setlist}
         id={item.id}
+         
       />
       <Collapsible.Root
         unmountOnExit 
@@ -96,8 +97,8 @@ function Todoitem({ item, list, setlist }) {
                 cursor={"pointer"}
                 // checked={isCompleted}
                 onClick={handleCheckboxClick}
-                onChange={(e) => {
-                  handleSetCheck(e, item.id);
+                onChange={() => {
+                  handleSetCheck(item.id);
                 }}
               >
                 <Checkbox.HiddenInput />
