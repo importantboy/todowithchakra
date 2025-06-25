@@ -55,12 +55,13 @@ function Todoitem({ item, list, setlist }) {
         lazyMount={true}
          
       >
-        <Collapsible.Trigger paddingY="3" minW={{base : 'sm' , sm : 'sm' , md : 'md' , lg : 'md'}}>
+        <Collapsible.Trigger paddingY="3" >
           <HStack
             justifyContent={"space-between"}
             display={"flex"}
             textAlign={"left"}
             className="rahulisgreat"
+            
           >
             <Box
               as={"div"}

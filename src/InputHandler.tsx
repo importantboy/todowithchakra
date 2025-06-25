@@ -42,7 +42,10 @@ const InputHandler = ({ exportList }) => {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
+      className="inputhandler"
+      // minWidth={{smToLg: 'md'}}
     >
+
       <Heading
         as={"h2"}
         textTransform={"uppercase"}
@@ -57,9 +60,12 @@ const InputHandler = ({ exportList }) => {
         as={"div"}
         px={{ base: "2rem", md: "0rem" }}
         className="input-rahul"
-        minW={{ base: "sm", sm: "sm", md: "md", lg: "md" }}
       >
-        <Field.Root display={"flex"} flexDir={"row"}>
+        <Field.Root
+          display={"flex"}
+          flexDirection={"row"}
+          gap={3}
+        >
           <InputGroup startElement={<MdOutlineEditNote />}>
             <Input
               type="text"
@@ -72,7 +78,7 @@ const InputHandler = ({ exportList }) => {
         </Field.Root>
 
         {/* // here the todo list item will come  */}
-        <Box as={"div"} display={"flex"} flexDir={"column"}>
+        <Box as={"div"} display={"flex"} flexDir={"column"} >
           {/* all todo list item will go here  */}
           {
             <For each={todoList}>
