@@ -43,6 +43,7 @@ function Todoitem({ item, list, setlist }) {
       
       />
       <Collapsible.Root
+        maxW={'md'}
         unmountOnExit 
         bg={"whiteAlpha.100"}
         px={"4"}
@@ -53,14 +54,16 @@ function Todoitem({ item, list, setlist }) {
          open={collapse}
          onOpenChange={(e) => setcollapse(e.open)}
         lazyMount={true}
+        className="isthereanybutton"
          
       >
-        <Collapsible.Trigger paddingY="3" >
+        <Collapsible.Trigger paddingY="3" asChild>
           <HStack
             justifyContent={"space-between"}
             display={"flex"}
             textAlign={"left"}
             className="rahulisgreat"
+             w={'100%'}
             
           >
             <Box
@@ -138,9 +141,10 @@ function Todoitem({ item, list, setlist }) {
         </Collapsible.Trigger>
         <Collapsible.Content>
           <Code>double click to edit :</Code>
-          <Box padding="4" my={"5"} borderWidth="1px">
+          <Box padding="4" my={"5"} borderWidth="1px" >
             {/* text inside the box will go inside it    */}
             <Editable.Root
+               minW={'full'}
               defaultValue={item.title}
               onValueChange={(val) => {
                 const updatedlist = list.map((user) => {
